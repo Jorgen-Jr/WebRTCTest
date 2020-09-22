@@ -53,7 +53,7 @@ export default function (Room) {
 
             // Code for creating SDP answer below
             Room.offer = Room.roomSnapshot.data().offer;
-            
+
             console.log('Got offer:', Room.offer);
             await Room.peerConnection.setRemoteDescription(new RTCSessionDescription(Room.offer));
 

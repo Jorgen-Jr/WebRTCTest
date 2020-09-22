@@ -8,5 +8,5 @@ export default function (Room) {
         Room.remoteStream = null;
         Room.roomId = null;
 
-        Room.roomDialog = new mdc.dialog.MDCDialog(document.querySelector('#room-dialog'));
+        Room.roomDialog = new mdc.dialog.MDCDialog(document.getElementById('room-dialog'));
 }

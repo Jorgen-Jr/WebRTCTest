@@ -1,8 +1,6 @@
 export default function (Room) {
     Room.openMedia = async function (e) {
-        Room.stream = await navigator.mediaDevices.getDisplayMedia(
-            // { video: true, audio: true }
-            );
+        Room.stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
 
         document.getElementById('localVideo').srcObject = Room.stream;
 

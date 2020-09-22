@@ -43,10 +43,9 @@ export default async function (Room) {
         await Room.roomRef.set(Room.roomWithOffer);
         Room.roomId = Room.roomRef.id;
         console.log(`New room created with SDP offer. Room ID: ${Room.roomRef.id}`);
-        document.querySelector(
-            '#currentRoom').innerText = `Current room is ${Room.roomRef.id} - You are the caller!`;
-        // Code for creating a room above
+        document.querySelector('#currentRoom').innerText = `Current room is ${Room.roomRef.id} - You are the caller!`;
 
+        // Code for creating a room above
         Room.peerConnection.addEventListener('track', event => {
             console.log('Got remote track:', event.streams[0]);
             event.streams[0].getTracks().forEach(track => {
